@@ -1,4 +1,3 @@
-
 def calculateStats(numbers):
     if not numbers:
         return {}
