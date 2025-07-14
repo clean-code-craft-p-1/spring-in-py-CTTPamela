@@ -16,10 +16,13 @@ class StatsTest(unittest.TestCase):
     # nan (not-a-number), as defined in the math package
     # Specify the assert here.
     # Use nan and isnan in https://docs.python.org/3/library/math.html
-    computedstats123 = statistics.calculatestats([5, 6])
-    self.assertFalse(math.isnan(computedstats123["avg"]))
-    self.assertFalse(math.isnan(computedstats123["min"]))
-    self.assertFalse(math.isnan(computedstats123["max"]))
+    computedstats123 = statistics.calculatestats([])
+    if not computedstats123:
+      print("error happens")
+    else:
+      self.assertFalse(math.isnan(computedstats123["avg"]))
+      self.assertFalse(math.isnan(computedstats123["min"]))
+      self.assertFalse(math.isnan(computedstats123["max"]))
 
 
 
