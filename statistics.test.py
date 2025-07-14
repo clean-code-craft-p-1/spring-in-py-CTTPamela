@@ -1,6 +1,6 @@
 import unittest
 import statistics
-
+import math
 
 class StatsTest(unittest.TestCase):
   def test_report_min_max_avg(self):
@@ -16,6 +16,10 @@ class StatsTest(unittest.TestCase):
     # nan (not-a-number), as defined in the math package
     # Specify the assert here.
     # Use nan and isnan in https://docs.python.org/3/library/math.html
+    computedstats123 = statistics.calculatestats([5, 6])
+    self.assertFalse(math.isnan(computedstats123["avg"]))
+    self.assertFalse(math.isnan(computedstats123["min"]))
+    self.assertFalse(math.isnan(computedstats123["max"]))
 
 
 if __name__ == "__main__":
